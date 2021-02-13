@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #EEE;
+    font: 10px/13px 'Lucida Sans',sans-serif;
+ }
+
+.wrap {
+    overflow: hideen;
+    margin: 10px;
+}
+
+.pictures {
+    float: left;
+    position: relative;
+    width: 20%;
+    padding-bottom: 20%;
+}
+
+.innerContent {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    overflow: hidden;
+
+}
+.innerContent img {
+    max-width: 100%;
+}
+
+.innerContent .titles {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: -50px;
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+
+@supports (transition:.innerContent .titles){
+        all 0.3s ease-out;
+    }
+
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    
+body .no-touch .innerContent:hover .titles, body.touch .innerContent {
+    margin: 0;
+}
+
+@media only screen and (max-width : 480px) {
+    /* kännykkä 1kuva */
+    .pictures {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+}
+
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+    /* tablet näkymä 2kuvaa */
+    .pictures {
+        width:50%;
+        padding-bottom: 50%;
+    }
+}
+
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+    /* small desktop ja iPad 3kuvaa */
+    .pictures {
+        width: 33.3%;
+        padding-bottom: 33.3%;
+    }
+} 
+
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+    /* medium desktop : 4kuvaa*/
+    .pictures {
+        width : 25%;
+        padding-bottom: 25%;
+    }
+}
